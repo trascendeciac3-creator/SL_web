@@ -37,7 +37,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveMediaIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 3000); // Changed to 3 seconds as requested
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -90,7 +90,7 @@ const App: React.FC = () => {
   return (
     <Layout>
       {/* SECTION 1: HERO GALLERY */}
-      <section id="hero" className="relative h-screen flex flex-col justify-center bg-charcoal overflow-hidden pt-20">
+      <section id="hero" className="relative h-screen flex flex-col justify-center bg-charcoal overflow-hidden pt-32 md:pt-40">
         <div className="absolute inset-0 z-0 bg-charcoal">
           {HERO_IMAGES.map((img, idx) => (
             <div 
@@ -108,28 +108,28 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-charcoal/90 z-10" />
         </div>
 
-        <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full pb-32 md:pb-24">
-          <div className="max-w-5xl space-y-10 animate-in fade-in slide-in-from-left-8 duration-1000">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] uppercase tracking-tighter text-white drop-shadow-2xl">
+        <div className="relative z-20 max-w-[1400px] mx-auto px-6 md:px-12 w-full pb-48 md:pb-32">
+          <div className="max-w-5xl space-y-8 md:space-y-12 animate-in fade-in slide-in-from-left-8 duration-1000">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] uppercase tracking-tighter text-white drop-shadow-2xl">
               The home for <br className="hidden sm:block" /> your soul, <br />
               <span className="text-primary">the place you were</span> <br />
               <span className="text-primary">waiting for.</span>
             </h1>
             
-            <h2 className="text-white/90 text-xl md:text-3xl font-medium max-w-3xl leading-relaxed italic border-l-4 border-primary pl-8 py-2 drop-shadow-md">
+            <h2 className="text-white/90 text-lg md:text-2xl font-medium max-w-2xl leading-relaxed italic border-l-4 border-primary pl-6 py-1 drop-shadow-md">
               Take part in this journey of nurturing your faith.
             </h2>
 
-            <div className="flex flex-wrap gap-5 pt-8">
+            <div className="flex flex-wrap gap-4 pt-4">
               <button 
                 onClick={() => scrollToSection('events')}
-                className="px-12 py-6 bg-white text-charcoal rounded-full font-black text-sm uppercase tracking-widest flex items-center gap-4 hover:bg-primary hover:text-white transition-all hover:scale-105 active:scale-95 shadow-2xl"
+                className="px-10 py-5 bg-white text-charcoal rounded-full font-black text-xs uppercase tracking-widest flex items-center gap-4 hover:bg-primary hover:text-white transition-all hover:scale-105 active:scale-95 shadow-2xl"
               >
-                Join the Mission <ArrowRight size={20} />
+                Join the Mission <ArrowRight size={18} />
               </button>
               <button 
                 onClick={() => scrollToSection('events')}
-                className="px-12 py-6 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-black text-sm uppercase tracking-widest flex items-center gap-4 hover:bg-white/20 transition-all hover:scale-105 active:scale-95"
+                className="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-black text-xs uppercase tracking-widest flex items-center gap-4 hover:bg-white/20 transition-all hover:scale-105 active:scale-95"
               >
                 Explore Events
               </button>
@@ -137,22 +137,22 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* HERO BANNER: Faith. Friends. Fellowship. */}
-        <div className="absolute bottom-0 left-0 w-full z-30 bg-primary border-y border-white/10 py-4 overflow-hidden shadow-2xl">
-          <div className="flex animate-scroll whitespace-nowrap items-center gap-20 w-max">
+        {/* HERO BANNER: Faith. Friends. Fellowship. (Reduced height py-3.5) */}
+        <div className="absolute bottom-0 left-0 w-full z-30 bg-primary border-y border-white/10 py-3.5 overflow-hidden shadow-2xl">
+          <div className="flex animate-scroll whitespace-nowrap items-center gap-16 md:gap-20 w-max">
             {Array.from({length: 12}).map((_, i) => (
               <React.Fragment key={i}>
-                <div className="flex items-center gap-5">
-                  <Heart size={36} strokeWidth={3} fill="white" className="text-white" />
-                  <span className="text-4xl font-black tracking-tighter uppercase text-white">Faith.</span>
+                <div className="flex items-center gap-4 md:gap-5">
+                  <Heart size={30} strokeWidth={3} fill="white" className="text-white" />
+                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-white">Faith.</span>
                 </div>
-                <div className="flex items-center gap-5">
-                  <Handshake size={36} strokeWidth={2.5} className="text-white" />
-                  <span className="text-4xl font-black tracking-tighter uppercase text-white">Friends.</span>
+                <div className="flex items-center gap-4 md:gap-5">
+                  <Handshake size={30} strokeWidth={2.5} className="text-white" />
+                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-white">Friends.</span>
                 </div>
-                <div className="flex items-center gap-5">
-                  <Sun size={36} strokeWidth={2.5} className="text-white" />
-                  <span className="text-4xl font-black tracking-tighter uppercase text-white">Fellowship.</span>
+                <div className="flex items-center gap-4 md:gap-5">
+                  <Sun size={30} strokeWidth={2.5} className="text-white" />
+                  <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-white">Fellowship.</span>
                 </div>
               </React.Fragment>
             ))}
