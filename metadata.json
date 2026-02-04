@@ -1,0 +1,7 @@
+{
+  "name": "Spirited Lamb: Ventura Catholic YA",
+  "description": "A modern, self-updating hub for Catholic Young Adults exclusively in Ventura County, focusing on community, faith, and local fellowship.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
